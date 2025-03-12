@@ -7,8 +7,15 @@ import {
 	FormMessage,
 	Form,
 } from '@/components/ui/form';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { CredentialsLoginData, CredentialsLoginSchema } from '@/lib/zod';
 
 export function CredentialsLoginForm() {
+	const form = useForm<CredentialsLoginData>({
+		resolver: zodResolver(CredentialsLoginSchema),
+	});
+
 	return (
 		// <Form {...form}>
 		// 	<form>

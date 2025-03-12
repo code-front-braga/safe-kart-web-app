@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { AuthSection } from '../components/auth-section';
 import { CredentialsLoginForm } from '../components/credentials-login-form';
+import { GoogleLoginForm } from '../components/google-login-form';
 
 export default function LoginPage() {
 	return (
@@ -9,7 +10,7 @@ export default function LoginPage() {
 				<h2 className="font-gantari text-white">Faça o seu login</h2>
 
 				<CredentialsLoginForm />
-				{/* <GoogleLoginForm /> */}
+				<GoogleLoginForm />
 
 				<div className="flex w-full flex-col self-start text-white">
 					<p>Não possui uma conta?</p>

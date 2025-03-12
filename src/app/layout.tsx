@@ -1,3 +1,4 @@
+import { fonts } from '@/utils/fonts';
 import './globals.css';
 
 export default function RootLayout({
@@ -7,7 +8,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-br">
-			<body className={`antialiased`}>{children}</body>
+			<body
+				className={`${fonts.gantari.className} ${fonts.rajdhani.className} antialiased`}
+			>
+				{children}
+			</body>
 		</html>
 	);
 }

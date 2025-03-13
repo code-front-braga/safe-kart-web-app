@@ -6,7 +6,7 @@ export function AuthHeader() {
 			<div className="relative z-10 m-auto flex max-w-7xl flex-col items-center gap-1">
 				<div className="relative flex items-center justify-center gap-1 overflow-hidden">
 					<h1 className="font-rajdhani text-christalle tracking-wide text-2xl md:text-3xl">
-						<span className="text-cabaret">S</span>mart
+						<span className="text-cabaret">S</span>afe
 						<span className="text-cabaret">K</span>art
 					</h1>
 					<div className="bg-cabaret z-0 flex items-center justify-center rounded-full p-1.5">

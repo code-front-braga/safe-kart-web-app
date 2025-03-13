@@ -1,4 +1,4 @@
-import { AboutContent } from '../components/about-content';
+import { AboutContent } from './components/about-content';
 import { SiteSection } from '../components/site-section';
 
 export default function SiteAboutPage() {

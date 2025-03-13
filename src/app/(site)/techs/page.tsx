@@ -1,9 +1,9 @@
 import { SiteSection } from '../components/site-section';
-import { TechContent } from '../components/tech-content';
+import { TechContent } from './components/tech-content';
 
 export default function SiteTechPage() {
 	return (
-		<SiteSection id="tech">
+		<SiteSection id="techs">
 			<TechContent />
 		</SiteSection>
 	);

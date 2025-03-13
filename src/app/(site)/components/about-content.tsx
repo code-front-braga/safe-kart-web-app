@@ -10,14 +10,14 @@ export function AboutContent() {
 			<article className="flex flex-col gap-4">
 				<div className="flex flex-1 flex-col gap-1.5">
 					<motion.h2
-						className="text-christalle font-gantari mt-10 text-xl leading-snug sm:text-2xl"
+						className="text-white font-gantari mt-10 text-xl leading-snug sm:text-2xl"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1.2, ease: 'easeOut' }}
 						viewport={{ once: false }}
 					>
-						O que é o <span className="text-white">S</span>mart
-						<span className="text-white">K</span>art?
+						O que é o <span className="text-cabaret">S</span>afe
+						<span className="text-cabaret">K</span>art?
 					</motion.h2>
 
 					<motion.p
@@ -27,7 +27,7 @@ export function AboutContent() {
 						transition={{ duration: 1.4, ease: 'easeOut', delay: 0.2 }}
 						viewport={{ once: false }}
 					>
-						O SmartKart é uma plataforma desenvolvida para otimizar sua
+						O SafeKart é uma plataforma desenvolvida para otimizar sua
 						experiência de compras. Com funcionalidades intuitivas, ele permite
 						que você organize suas listas, acompanhe seus gastos e tenha um
 						melhor planejamento financeiro. Nosso objetivo é oferecer uma

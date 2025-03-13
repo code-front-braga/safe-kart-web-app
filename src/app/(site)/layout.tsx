@@ -1,4 +1,5 @@
 import { SiteBackground } from './components/site-background';
+import { SiteFooter } from './components/site-footer';
 
 export default function SiteLayout({
 	children,
@@ -7,6 +8,7 @@ export default function SiteLayout({
 		<main className="min-h-svh w-full overflow-hidden">
 			<SiteBackground />
 			{children}
+			<SiteFooter />
 		</main>
 	);
 }

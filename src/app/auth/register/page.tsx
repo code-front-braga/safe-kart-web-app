@@ -1,7 +1,23 @@
+import { AuthSection } from '../components/auth-section';
+import { RegisterForm } from '../components/register-form';
+import { AuthFormFooter } from '../components/auth-form-footer';
+import { FormTitle } from '../components/form-title';
+import { AuthContainer } from '../components/auth-container';
+
 export default function RegisterPage() {
 	return (
-		<div>
-			<h1>Register Page</h1>
-		</div>
+		<AuthSection>
+			<AuthContainer>
+				<FormTitle title="Cadastre-se" />
+
+				<RegisterForm />
+
+				<AuthFormFooter
+					href="/auth/login"
+					paragraphText="Já possui uma conta?"
+					linkText="Faça seu login"
+				/>
+			</AuthContainer>
+		</AuthSection>
 	);
 }

@@ -1,13 +1,11 @@
-import { BackgroundColorEffect } from './components/background-color-effect';
-import { HomeContent } from './components/home-content';
-import { SiteSection } from './components/site-section';
+import SiteAboutPage from './about/page';
+import SiteHomePage from './home/page';
 
-export default function SiteHomePage() {
+export default function Site() {
 	return (
-		<SiteSection id="/" className="font-rajdhani">
-			<BackgroundColorEffect />
-
-			<HomeContent />
-		</SiteSection>
+		<>
+			<SiteHomePage />
+			<SiteAboutPage />
+		</>
 	);
 }

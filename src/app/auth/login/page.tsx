@@ -1,6 +1,6 @@
 import { AuthSection } from '../components/auth-section';
-import { CredentialsLoginForm } from '../components/credentials-login-form';
-import { GoogleLoginForm } from '../components/google-login-form';
+import { CredentialsLoginForm } from './components/credentials-login-form';
+import { GoogleLoginForm } from './components/google-login-form';
 import { AuthFormFooter } from '../components/auth-form-footer';
 import { FormTitle } from '../components/form-title';
 import { AuthContainer } from '../components/auth-container';

@@ -8,16 +8,13 @@ export default function RegisterPage() {
 	return (
 		<AuthSection>
 			<AuthContainer>
-				<FormTitle title="Cadastre-se" />
-
 				<RegisterForm />
-
 			</AuthContainer>
-				<AuthFormFooter
-					href="/auth/login"
-					paragraphText="Já possui uma conta?"
-					linkText="Faça seu login"
-				/>
+			<AuthFormFooter
+				href="/auth/login"
+				paragraphText="Já possui uma conta?"
+				linkText="Faça seu login"
+			/>
 		</AuthSection>
 	);
 }

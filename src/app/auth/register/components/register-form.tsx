@@ -15,7 +15,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion, AnimatePresence } from 'motion/react';
-import { MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md';
+import {
+	MdOutlineKeyboardDoubleArrowRight,
+	MdOutlineKeyboardDoubleArrowLeft,
+} from 'react-icons/md';
+
 import { FaUserPlus } from 'react-icons/fa6';
 
 type RegisterSteps =
@@ -60,7 +64,7 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-48 justify-around"
+							className="w-full flex flex-col gap-2 h-58 justify-around"
 						>
 							<h3 className="text-christalle text-base mb-2 font-semibold">
 								Para começar, digite seu nome ou um apelido...
@@ -109,9 +113,9 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-48 justify-around"
+							className="w-full flex flex-col h-58 justify-around"
 						>
-							<h3 className="text-christalle text-base mb-2 font-semibold">
+							<h3 className="text-christalle text-base font-semibold">
 								Agora, digite seu melhor email...
 							</h3>
 							<FormField
@@ -158,7 +162,7 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-48 justify-around"
+							className="w-full flex flex-col gap-2 h-58 justify-around"
 						>
 							<h3 className="text-christalle text-base mb-2 font-semibold">
 								Crie uma senha...
@@ -206,7 +210,7 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-48 justify-around"
+							className="w-full flex flex-col gap-2 h-58 justify-around"
 						>
 							<h3 className="text-christalle text-base mb-2 font-semibold">
 								Por favor, confirme sua senha...
@@ -256,7 +260,7 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-48 justify-around"
+							className="w-full flex flex-col gap-2 h-58 justify-around"
 						>
 							<h3 className="text-christalle text-base mb-2 font-semibold">
 								Quase lá...Para finalizar, basta clicar no botão abaixo!

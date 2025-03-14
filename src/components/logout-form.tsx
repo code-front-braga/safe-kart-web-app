@@ -10,7 +10,7 @@ export function LogoutForm() {
 				className="text-cabaret flex flex-col items-end gap-1"
 			>
 				<SlLogout size={22} />
-				<span className="text-white">Sair</span>
+				<span className="text-christalle">Sair</span>
 			</button>
 		</Form>
 	);

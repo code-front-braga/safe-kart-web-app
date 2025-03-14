@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { auth } from '../../../auth';
 import { DashboardHeader } from './components/dashboard-header';
+import DashboarNavbar from './components/dashboard-navbar';
 
 export default async function DashboardLayout({
 	children,
@@ -12,6 +13,7 @@ export default async function DashboardLayout({
 		<main className="min-h-screen w-full">
 			<DashboardHeader />
 			{children}
+			<DashboarNavbar />
 		</main>
 	);
 }

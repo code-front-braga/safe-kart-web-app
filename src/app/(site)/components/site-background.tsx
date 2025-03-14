@@ -9,7 +9,7 @@ export function SiteBackground() {
 				fill
 				quality={100}
 				priority
-				className="object-cover opacity-15 contrast-125 sepia-50"
+				className="object-cover opacity-35 contrast-125 sepia-50"
 			/>
 		</div>
 	);

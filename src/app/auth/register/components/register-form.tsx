@@ -76,7 +76,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Digite seu nome/apelido..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle border-b-1 rounded-2xl border-christalle/55 p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -89,7 +89,16 @@ export function RegisterForm() {
 								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
 							>
 								<span>Avançar</span>
-								<MdOutlineKeyboardDoubleArrowRight size={24} />
+								<motion.div
+									animate={{ x: 8 }}
+									transition={{
+										duration: 0.6,
+										repeat: Infinity,
+										repeatType: 'reverse',
+									}}
+								>
+									<MdOutlineKeyboardDoubleArrowRight size={24} />
+								</motion.div>
 							</button>
 						</motion.div>
 					)}
@@ -116,7 +125,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Digite seu email..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle border-b-1 rounded-2xl border-christalle/55 p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -129,7 +138,16 @@ export function RegisterForm() {
 								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
 							>
 								<span>Avançar</span>
-								<MdOutlineKeyboardDoubleArrowRight size={24} />
+								<motion.div
+									animate={{ x: 8 }}
+									transition={{
+										duration: 0.6,
+										repeat: Infinity,
+										repeatType: 'reverse',
+									}}
+								>
+									<MdOutlineKeyboardDoubleArrowRight size={24} />
+								</motion.div>
 							</button>
 						</motion.div>
 					)}
@@ -156,7 +174,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Digite sua senha..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle border-b-1 rounded-2xl border-christalle/55 p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -169,7 +187,16 @@ export function RegisterForm() {
 								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
 							>
 								<span>Avançar</span>
-								<MdOutlineKeyboardDoubleArrowRight size={24} />
+								<motion.div
+									animate={{ x: 8 }}
+									transition={{
+										duration: 0.6,
+										repeat: Infinity,
+										repeatType: 'reverse',
+									}}
+								>
+									<MdOutlineKeyboardDoubleArrowRight size={24} />
+								</motion.div>
 							</button>
 						</motion.div>
 					)}
@@ -197,7 +224,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Confirme sua senha..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle border-b-1 rounded-2xl border-christalle/55 p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -210,7 +237,16 @@ export function RegisterForm() {
 								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
 							>
 								<span>Avançar</span>
-								<MdOutlineKeyboardDoubleArrowRight size={24} />
+								<motion.div
+									animate={{ x: 8 }}
+									transition={{
+										duration: 0.6,
+										repeat: Infinity,
+										repeatType: 'reverse',
+									}}
+								>
+									<MdOutlineKeyboardDoubleArrowRight size={24} />
+								</motion.div>
 							</button>
 						</motion.div>
 					)}
@@ -231,7 +267,17 @@ export function RegisterForm() {
 								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
 							>
 								<span>Criar Conta</span>
-								<FaUserPlus size={24} />
+								<motion.div
+									initial={{ scale: 1 }}
+									animate={{ scale: 1.4 }}
+									transition={{
+										duration: 0.6,
+										repeat: Infinity,
+										repeatType: 'reverse',
+									}}
+								>
+									<FaUserPlus size={24} />
+								</motion.div>
 							</Button>
 						</motion.div>
 					)}

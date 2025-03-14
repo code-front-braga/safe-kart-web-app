@@ -9,7 +9,7 @@ export function AuthBackground() {
 				fill
 				quality={100}
 				priority
-				className="object-cover"
+				className="object-cover opacity-60"
 			/>
 		</div>
 	);

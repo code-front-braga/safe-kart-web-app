@@ -40,11 +40,10 @@ export function RegisterForm() {
 
 	const nextStep = (next: RegisterSteps) => setRegisterStep(next);
 
-	// Animação de slide
 	const slideVariants = {
-		initial: { opacity: 0, x: 50 },
+		initial: { opacity: 0, x: 120 },
 		animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-		exit: { opacity: 0, x: -50, transition: { duration: 0.4 } },
+		exit: { opacity: 0, x: -220, transition: { duration: 0.4 } },
 	};
 
 	return (
@@ -76,7 +75,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Digite seu nome/apelido..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -86,7 +85,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('emailStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
+								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -125,7 +124,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Digite seu email..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -135,7 +134,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('passwordStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
+								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -174,7 +173,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Digite sua senha..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -184,7 +183,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('confirmPasswordStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
+								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -224,7 +223,7 @@ export function RegisterForm() {
 											<Input
 												placeholder="Confirme sua senha..."
 												{...field}
-												className="font-gantari bg-christalle/25 text-christalle rounded-2xl p-2 indent-2 text-sm outline-0"
+												className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -234,7 +233,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('finishStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
+								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -264,12 +263,12 @@ export function RegisterForm() {
 							</h3>
 							<Button
 								type="submit"
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded-2xl"
+								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
 							>
 								<span>Criar Conta</span>
 								<motion.div
 									initial={{ scale: 1 }}
-									animate={{ scale: 1.4 }}
+									animate={{ scale: 1.3 }}
 									transition={{
 										duration: 0.6,
 										repeat: Infinity,

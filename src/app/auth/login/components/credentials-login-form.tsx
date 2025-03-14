@@ -47,7 +47,7 @@ export function CredentialsLoginForm() {
 								<Input
 									placeholder="Digite seu email..."
 									{...field}
-									className="font-gantari text-christalle  border-b-1 border-christalle/55 p-2 indent-2 text-sm outline-0"
+									className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
 								/>
 							</FormControl>
 							<FormMessage />
@@ -64,7 +64,7 @@ export function CredentialsLoginForm() {
 								<Input
 									placeholder="Digite sua senha..."
 									{...field}
-									className="font-gantari text-christalle  border-b-1 border-christalle/55 p-2 indent-2 text-sm outline-0"
+									className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
 								/>
 							</FormControl>
 							<FormMessage />
@@ -73,7 +73,7 @@ export function CredentialsLoginForm() {
 				/>
 				<Button
 					type="submit"
-					className="bg-cabaret font-gantari mt-1.5 w-full cursor-pointer rounded-sm py-2.5 text-sm text-white"
+					className="bg-cabaret font-gantari mt-1.5 w-full cursor-pointer rounded py-2.5 text-sm text-white"
 				>
 					Entrar
 				</Button>

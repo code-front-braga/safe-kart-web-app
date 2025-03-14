@@ -10,7 +10,7 @@ export function AboutContent() {
 			<article className="flex flex-col gap-4">
 				<div className="flex flex-1 flex-col gap-1.5">
 					<motion.h2
-						className="text-white font-gantari mt-10 text-xl leading-snug sm:text-2xl"
+						className="font-gantari mt-10 text-xl leading-snug text-white sm:text-2xl"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1.2, ease: 'easeOut' }}

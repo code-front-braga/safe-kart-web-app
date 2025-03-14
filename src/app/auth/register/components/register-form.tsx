@@ -54,7 +54,7 @@ export function RegisterForm() {
 		<Form {...form}>
 			<form
 				onSubmit={() => {}}
-				className="mx-auto mt-2.5 flex w-full flex-col items-center gap-3.5 overflow-hidden relative"
+				className="relative mx-auto mt-2.5 flex w-full flex-col items-center gap-3.5 overflow-hidden"
 			>
 				<AnimatePresence mode="wait">
 					{registerStep === 'nameStep' && (
@@ -64,9 +64,9 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-58 justify-around"
+							className="flex h-58 w-full flex-col justify-around gap-2"
 						>
-							<h3 className="text-christalle text-base mb-2 font-semibold">
+							<h3 className="text-christalle mb-2 text-base font-semibold">
 								Para começar, digite seu nome ou um apelido...
 							</h3>
 							<FormField
@@ -89,7 +89,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('emailStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
+								className="bg-cabaret mt-3 flex w-full items-center justify-between rounded px-4 py-2 text-white"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -113,7 +113,7 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col h-58 justify-around"
+							className="flex h-58 w-full flex-col justify-around"
 						>
 							<h3 className="text-christalle text-base font-semibold">
 								Agora, digite seu melhor email...
@@ -138,7 +138,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('passwordStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
+								className="bg-cabaret mt-3 flex w-full items-center justify-between rounded px-4 py-2 text-white"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -162,9 +162,9 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-58 justify-around"
+							className="flex h-58 w-full flex-col justify-around gap-2"
 						>
-							<h3 className="text-christalle text-base mb-2 font-semibold">
+							<h3 className="text-christalle mb-2 text-base font-semibold">
 								Crie uma senha...
 							</h3>
 							<FormField
@@ -187,7 +187,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('confirmPasswordStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
+								className="bg-cabaret mt-3 flex w-full items-center justify-between rounded px-4 py-2 text-white"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -210,9 +210,9 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-58 justify-around"
+							className="flex h-58 w-full flex-col justify-around gap-2"
 						>
-							<h3 className="text-christalle text-base mb-2 font-semibold">
+							<h3 className="text-christalle mb-2 text-base font-semibold">
 								Por favor, confirme sua senha...
 							</h3>
 							<FormField
@@ -237,7 +237,7 @@ export function RegisterForm() {
 							<button
 								type="button"
 								onClick={() => nextStep('finishStep')}
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
+								className="bg-cabaret mt-3 flex w-full items-center justify-between rounded px-4 py-2 text-white"
 							>
 								<span>Avançar</span>
 								<motion.div
@@ -260,14 +260,14 @@ export function RegisterForm() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							className="w-full flex flex-col gap-2 h-58 justify-around"
+							className="flex h-58 w-full flex-col justify-around gap-2"
 						>
-							<h3 className="text-christalle text-base mb-2 font-semibold">
+							<h3 className="text-christalle mb-2 text-base font-semibold">
 								Quase lá...Para finalizar, basta clicar no botão abaixo!
 							</h3>
 							<Button
 								type="submit"
-								className="mt-3 px-4 py-2 w-full bg-cabaret flex items-center justify-between text-white rounded"
+								className="bg-cabaret mt-3 flex w-full items-center justify-between rounded px-4 py-2 text-white"
 							>
 								<span>Criar Conta</span>
 								<motion.div

@@ -20,7 +20,7 @@ export default function DashboarNavbar() {
 				key={link.url}
 				href={link.url}
 				onClick={() => handleActiveLink(link)}
-				className={`flex flex-col items-center ${handleActiveLink(link)}`}
+				className={`flex flex-col items-center text-base ${handleActiveLink(link)}`}
 			>
 				<link.icon size={22} />
 				{link.name}

@@ -14,6 +14,9 @@ import { CredentialsLoginData, CredentialsLoginSchema } from '@/lib/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
+import { credentialsLogin } from '@/actions/credentials-login';
+import { ErrorDialog } from '../../components/error-dialog';
+import { ImSpinner } from 'react-icons/im';
 
 export function CredentialsLoginForm() {
 	const [loading, setLoading] = useState<boolean>(false);
@@ -31,53 +34,75 @@ export function CredentialsLoginForm() {
 		form.setFocus('email');
 	});
 
+	async function onSubmit(data: CredentialsLoginData) {
+		setLoading(true);
+		setError(null);
+		credentialsLogin(data).then(res => {
+			if (res.error) {
+				setLoading(false);
+				setError(res.error);
+			} else {
+				setError('');
+				setLoading(false);
+			}
+		});
+	}
+
 	return (
-		<Form {...form}>
-			<form
-				onSubmit={() => {}}
-				className="mx-auto mt-2.5 flex w-full flex-col items-center gap-3.5"
-			>
-				<FormField
-					control={form.control}
-					name="email"
-					render={({ field }) => (
-						<FormItem className="w-full">
-							<FormLabel className="text-cabaret">Email</FormLabel>
-							<FormControl>
-								<Input
-									placeholder="Digite seu email..."
-									{...field}
-									className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name="password"
-					render={({ field }) => (
-						<FormItem className="w-full">
-							<FormLabel className="text-cabaret">Senha</FormLabel>
-							<FormControl>
-								<Input
-									placeholder="Digite sua senha..."
-									{...field}
-									className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<Button
-					type="submit"
-					className="bg-cabaret font-gantari mt-1.5 w-full cursor-pointer rounded py-2.5 text-sm text-white"
+		<>
+			<Form {...form}>
+				<form
+					onSubmit={form.handleSubmit(onSubmit)}
+					className="mx-auto mt-2.5 flex w-full flex-col items-center gap-8"
 				>
-					Entrar
-				</Button>
-			</form>
-		</Form>
+					<FormField
+						control={form.control}
+						name="email"
+						render={({ field }) => (
+							<FormItem className="relative w-full">
+								<FormLabel className="text-cabaret">Email</FormLabel>
+								<FormControl>
+									<Input
+										placeholder="Digite seu email..."
+										{...field}
+										className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
+									/>
+								</FormControl>
+								<FormMessage className="absolute -bottom-5" />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="password"
+						render={({ field }) => (
+							<FormItem className="relative w-full">
+								<FormLabel className="text-cabaret">Senha</FormLabel>
+								<FormControl>
+									<Input
+										placeholder="Digite sua senha..."
+										{...field}
+										className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
+									/>
+								</FormControl>
+								<FormMessage className="absolute -bottom-5" />
+							</FormItem>
+						)}
+					/>
+					<Button
+						type="submit"
+						disabled={loading}
+						className="bg-cabaret font-gantari w-full cursor-pointer rounded py-2.5 text-sm text-white"
+					>
+						{loading ? (
+							<ImSpinner size={24} className="animate-spin" />
+						) : (
+							'Entrar'
+						)}
+					</Button>
+				</form>
+			</Form>
+			{error && <ErrorDialog message={error} />}
+		</>
 	);
 }

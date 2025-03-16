@@ -17,7 +17,7 @@ export default function LoginPage() {
 				<AuthFormFooter
 					href="/auth/register"
 					paragraphText="Não possui uma conta?"
-					linkText="Cadastre-se agora mesmo"
+					linkText="Cadastre-se"
 				/>
 			</AuthContainer>
 		</AuthSection>

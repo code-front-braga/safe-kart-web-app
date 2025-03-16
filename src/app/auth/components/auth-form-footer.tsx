@@ -12,9 +12,12 @@ export function AuthFormFooter({
 	linkText,
 }: AuthFormFooterProps) {
 	return (
-		<div className="text-christalle mt-4 flex w-full flex-col items-center">
-			<p>{paragraphText}</p>
-			<Link href={href} className="font-rajdhani underline underline-offset-4">
+		<div className="text-christalle mt-4 flex w-full items-center justify-evenly">
+			<p className="text-sm">{paragraphText}</p>
+			<Link
+				href={href}
+				className="font-rajdhani text-sm underline underline-offset-4"
+			>
 				{linkText}
 			</Link>
 		</div>

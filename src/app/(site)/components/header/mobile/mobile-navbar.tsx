@@ -2,20 +2,11 @@
 
 import Link from 'next/link';
 import { useContext } from 'react';
-import { HiHome } from 'react-icons/hi';
-import { BsInfoCircleFill } from 'react-icons/bs';
-import { IoMdSettings } from 'react-icons/io';
-
 import { motion } from 'motion/react';
 import { SitePagesProps } from '../interfaces/site-pages';
 import { useScroll } from '@/app/(site)/contexts/scroll-context';
 import { MenuToggleContext } from '@/app/(site)/contexts/menu-toggle-context';
-
-export const pages: SitePagesProps[] = [
-	{ name: 'Home', url: '#home', icon: HiHome },
-	{ name: 'Sobre', url: '#about', icon: BsInfoCircleFill },
-	{ name: 'Tech', url: '#techs', icon: IoMdSettings },
-];
+import { pages } from '@/app/(site)/utils/constants';
 
 export default function Navbar() {
 	const { activeHash, setActiveHash } = useScroll();

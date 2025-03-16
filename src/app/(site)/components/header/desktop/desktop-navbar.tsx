@@ -4,7 +4,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { useScroll } from '@/app/(site)/contexts/scroll-context';
 import { SitePagesProps } from '../interfaces/site-pages';
-import { pages } from '../mobile/mobile-navbar';
+import { pages } from '@/app/(site)/utils/constants';
 
 export function NavbarDesktop() {
 	const { activeHash, setActiveHash } = useScroll();

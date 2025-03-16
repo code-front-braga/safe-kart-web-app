@@ -9,7 +9,7 @@ export default async function DashboardLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	const session = await auth();
-	// if (!session) redirect('/auth/login');
+	if (!session) redirect('/auth/login');
 
 	return (
 		<main className="min-h-screen w-full">

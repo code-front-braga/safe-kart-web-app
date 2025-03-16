@@ -11,8 +11,11 @@ export async function DashboardHeader() {
 					<p className="text-christalle truncate overflow-hidden text-lg text-ellipsis whitespace-nowrap">
 						Olá,
 						<br />
-						Leonardo Primo Viana Braga!
+						{session?.user?.name}
 					</p>
+					<span className="text-christalle truncate overflow-hidden text-sm text-ellipsis whitespace-nowrap">
+						{session?.user?.email}
+					</span>
 				</div>
 				<LogoutForm />
 			</div>

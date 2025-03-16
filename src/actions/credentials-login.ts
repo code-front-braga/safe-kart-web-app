@@ -2,29 +2,31 @@
 
 import { db } from '@/lib/db/prisma';
 import { CredentialsLoginData, CredentialsLoginSchema } from '@/lib/zod';
-import { signIn } from '../../auth';
-import { redirect } from 'next/navigation';
 import { AuthError } from 'next-auth';
-export async function credentialsLogin(data: CredentialsLoginData) {
+import { redirect } from 'next/navigation';
+import { signIn } from '../../auth';
+
+export async function login(data: CredentialsLoginData) {
 	const validatedData = CredentialsLoginSchema.parse(data);
-	if (!validatedData) return { error: 'Dados de entrada inválidos' };
+
+	if (!validatedData) {
+		return { error: 'Dados de entrada inválidos' };
+	}
 
 	const { email, password } = validatedData;
 
-	const existingUser = await db.user.findFirst({
-		where: { email },
+	const userExists = await db.user.findFirst({
+		where: { email: email },
 	});
 
-	if (!existingUser || !existingUser.email || !existingUser.password)
-		return {
-			error:
-				'Usuário não encontrado. Verifique seu e-mail e senha e tente novamente.',
-		};
+	if (!userExists || !userExists.password || !userExists.email) {
+		return { error: 'Usuário não encontrado' };
+	}
 
 	try {
 		await signIn('credentials', {
-			email: existingUser.email,
-			password,
+			email: userExists.email,
+			password: password,
 		});
 		redirect('/dashboard');
 	} catch (error) {
@@ -38,4 +40,5 @@ export async function credentialsLogin(data: CredentialsLoginData) {
 		}
 		throw error;
 	}
+	return { success: 'Usuário logado com sucesso!' };
 }

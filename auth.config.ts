@@ -1,16 +1,15 @@
-import { Env } from '@/lib/env';
-import { NextAuthConfig } from 'next-auth';
-import Google from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
+import Google from 'next-auth/providers/google';
+import { NextAuthConfig } from 'next-auth';
+import { compare } from 'bcrypt-ts';
 import { CredentialsLoginSchema } from '@/lib/zod';
 import { db } from '@/lib/db/prisma';
-import { compare } from 'bcrypt-ts';
 
 export default {
 	providers: [
 		Google({
-			clientId: Env.AUTH_GOOGLE_ID,
-			clientSecret: Env.AUTH_GOOGLE_SECRET,
+			clientId: process.env.AUTH_GOOGLE_ID,
+			clientSecret: process.env.AUTH_GOOGLE_SECRET,
 			authorization: {
 				params: {
 					prompt: 'consent',
@@ -22,17 +21,19 @@ export default {
 		Credentials({
 			async authorize(credentials) {
 				const validatedData = CredentialsLoginSchema.safeParse(credentials);
-
 				if (!validatedData.success) return null;
-
 				const { email, password } = validatedData.data;
 				const user = await db.user.findFirst({
-					where: { email },
+					where: { email: email },
 				});
-				if (!user || !user.email || !user.password) return null;
+				if (!user || !user.password || !user.email) {
+					return null;
+				}
 
-				const passwordsMatch = await compare(user.password, password);
-				if (passwordsMatch) return user;
+				const passwordsMatch = await compare(password, user.password);
+				if (passwordsMatch) {
+					return user;
+				}
 
 				return null;
 			},

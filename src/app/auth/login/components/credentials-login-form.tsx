@@ -14,7 +14,7 @@ import { CredentialsLoginData, CredentialsLoginSchema } from '@/lib/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
-import { credentialsLogin } from '@/actions/credentials-login';
+import { login } from '@/actions/credentials-login';
 import { ErrorDialog } from '../../components/error-dialog';
 import { ImSpinner } from 'react-icons/im';
 
@@ -37,7 +37,7 @@ export function CredentialsLoginForm() {
 	async function onSubmit(data: CredentialsLoginData) {
 		setLoading(true);
 		setError(null);
-		credentialsLogin(data).then(res => {
+		login(data).then(res => {
 			if (res.error) {
 				setLoading(false);
 				setError(res.error);

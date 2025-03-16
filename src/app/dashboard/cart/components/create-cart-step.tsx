@@ -21,7 +21,7 @@ export function CreateCartStep() {
 				animate={{ opacity: 1, x: 0 }}
 				className="flex w-full items-center justify-between"
 			>
-				<span className="font-semibold">Atakarejo</span>
+				<span className="text-christalle font-semibold">Atakarejo</span>
 
 				<button
 					type="button"
@@ -37,7 +37,6 @@ export function CreateCartStep() {
 					<span className="text-cadetBlue font-semibold">R$ 150,00</span>
 				</div>
 			</motion.div>
-			<span className="border-christalle/50 mt-2 w-full border-b-1" />
 
 			{isOpenFormButtonClicked && <AddItemForm />}
 			{isAddItemFormSubmitted && <CartList />}

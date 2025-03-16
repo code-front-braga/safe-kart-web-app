@@ -222,6 +222,7 @@ export function RegisterForm() {
 											<FormLabel className="text-cabaret">Senha</FormLabel>
 											<FormControl>
 												<Input
+													type="password"
 													placeholder="Digite sua senha..."
 													{...field}
 													className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"
@@ -274,6 +275,7 @@ export function RegisterForm() {
 											</FormLabel>
 											<FormControl>
 												<Input
+													type="password"
 													placeholder="Confirme sua senha..."
 													{...field}
 													className="font-gantari bg-christalle/25 text-christalle rounded p-2 indent-2 text-sm outline-0"

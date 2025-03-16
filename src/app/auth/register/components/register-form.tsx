@@ -21,6 +21,7 @@ import {
 } from 'react-icons/md';
 
 import { FaUserPlus } from 'react-icons/fa6';
+import { slideVariants } from '@/utils/constants';
 
 type RegisterSteps =
 	| 'nameStep'
@@ -43,12 +44,6 @@ export function RegisterForm() {
 	});
 
 	const nextStep = (next: RegisterSteps) => setRegisterStep(next);
-
-	const slideVariants = {
-		initial: { opacity: 0, x: 120 },
-		animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-		exit: { opacity: 0, x: -220, transition: { duration: 0.4 } },
-	};
 
 	return (
 		<Form {...form}>

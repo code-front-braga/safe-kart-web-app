@@ -15,6 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { CartStepContext } from '../contexts/cart-step-context';
+import { motion } from 'motion/react';
 
 export function SuperMarketNameStep() {
 	const { nextStep } = useContext(CartStepContext);
@@ -24,8 +25,8 @@ export function SuperMarketNameStep() {
 	});
 
 	useEffect(() => {
-    form.setFocus('supermarketName');
-  });
+		form.setFocus('supermarketName');
+	});
 
 	function onSubmit(data: SupermarketNameData) {
 		console.log(data);
@@ -33,7 +34,11 @@ export function SuperMarketNameStep() {
 	}
 
 	return (
-		<div className="flex h-full flex-col">
+		<motion.div
+			initial={{ opacity: 0, x: 500 }}
+			animate={{ opacity: 1, x: 0 }}
+			className="flex h-full flex-col"
+		>
 			<p className="text-christalle mb-4 text-justify text-base font-semibold">
 				Olá! Antes de criar sua lista, por favor, informe o nome do supermercado
 				onde você fará suas compras hoje e depois clique em{' '}
@@ -70,6 +75,6 @@ export function SuperMarketNameStep() {
 					</Button>
 				</form>
 			</Form>
-		</div>
+		</motion.div>
 	);
 }

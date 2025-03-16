@@ -13,10 +13,10 @@ export function CreateNewCart() {
 	const { cartStep } = useContext(CartStepContext);
 
 	return (
-		<AnimatePresence mode="wait">
+		<>
 			{cartStep === 'start' && <StartStep />}
 			{cartStep === 'supermarketName' && <SuperMarketNameStep />}
 			{cartStep === 'createCart' && <CreateCartStep />}
-		</AnimatePresence>
+		</>
 	);
 }

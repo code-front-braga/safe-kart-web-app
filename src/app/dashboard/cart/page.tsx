@@ -1,3 +1,10 @@
+import { DashboardSection } from '../components/dashboard-section';
+import { CreateNewCart } from './components/create-new-cart';
+
 export default function DashboardCartPage() {
-	return <h1>Dashboard Cart Page</h1>;
+	return (
+		<DashboardSection>
+			<CreateNewCart />
+		</DashboardSection>
+	);
 }

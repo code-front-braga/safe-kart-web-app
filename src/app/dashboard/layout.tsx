@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation';
 import { auth } from '../../../auth';
 import { DashboardHeader } from './components/dashboard-header';
 import DashboarNavbar from './components/dashboard-navbar';
+import { CartStepProvider } from './cart/contexts/cart-step-context';
+import { CartProvider } from './cart/contexts/cart-context';
 
 export default async function DashboardLayout({
 	children,
@@ -12,7 +14,9 @@ export default async function DashboardLayout({
 	return (
 		<main className="min-h-screen w-full">
 			<DashboardHeader />
-			{children}
+			<CartProvider>
+				<CartStepProvider>{children}</CartStepProvider>
+			</CartProvider>
 			<DashboarNavbar />
 		</main>
 	);

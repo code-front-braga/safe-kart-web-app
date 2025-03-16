@@ -35,12 +35,15 @@ export function HomeContent() {
 				Seu supermercado, do seu jeito.
 			</motion.p>
 			<motion.button
-				initial={{ scale: 0 }}
-				animate={{ scale: 1 }}
-				transition={{ duration: 1, ease: 'linear', delay: 1.8 }}
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1, ease: 'anticipate', delay: 1.8 }}
 				className="mt-1.5 rounded-sm bg-white p-1.5 shadow-2xl sm:w-full"
 			>
-				<Link href="/auth/register" className="text-christalle sm:text-xl">
+				<Link
+					href="/auth/register"
+					className="text-christalle font-semibold sm:text-xl"
+				>
 					Crie sua conta
 				</Link>
 			</motion.button>

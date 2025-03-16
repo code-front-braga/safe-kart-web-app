@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { BsChevronBarDown } from 'react-icons/bs';
 import { FaOpencart } from 'react-icons/fa';
-import Navbar from './navbar';
+import Navbar from './mobile-navbar';
 import { MenuToggleContext } from '@/app/(site)/contexts/menu-toggle-context';
 import { useContext } from 'react';
 

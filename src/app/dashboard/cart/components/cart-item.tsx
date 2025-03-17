@@ -1,39 +1,30 @@
 import { MdDelete } from 'react-icons/md';
+import { Product } from './cart-list';
 import { BiSolidEditAlt } from 'react-icons/bi';
-import { Prisma } from '@prisma/client';
 
-interface ProductProps {
-	product: Prisma.ProductGetPayload<{
-		include: {
-			cartProducts: {
-				select: {
-					quantity: true;
-				};
-			};
-		};
-	}>;
-}
-
-export function CartItem({ product }: ProductProps) {
+export function CartItem({
+	productName,
+	unitPrice,
+	quantity,
+	amount,
+}: Product) {
 	return (
 		<li className="bg-moonRaker/80 text-christalle flex items-center justify-between gap-5 rounded p-1.5 text-sm font-semibold">
 			<div className="flex flex-1 items-center justify-between">
 				<div className="flex flex-col">
 					<span>
-						Produto: <span>{product.name}</span>
+						Produto: <span>{productName}</span>
 					</span>
 					<span>
-						Preço (Un.): <span>R$ {product.price}</span>
+						Preço (Un.): <span>R$ {unitPrice}</span>
 					</span>
-					{product.cartProducts.map(cartProduct => (
-						<span>
-							Quantidade: <span>{cartProduct.quantity}</span>
-						</span>
-					))}
+					<span>
+						Quantidade: <span>{quantity}</span>
+					</span>
 				</div>
 				<div className="flex flex-col items-end">
 					<span>Total</span>
-					<span>R$ {product.total}</span>
+					<span>R$ {amount}</span>
 				</div>
 			</div>
 			<div className="flex h-full flex-col items-center justify-around border-l-1 border-l-white pl-2">

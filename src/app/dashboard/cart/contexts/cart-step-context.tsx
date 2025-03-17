@@ -7,16 +7,12 @@ interface CartStepContext {
 	cartStep: CreateNewCartStep;
 	nextStep: (step: CreateNewCartStep) => void;
 	setCartStep: (step: CreateNewCartStep) => void;
-	supermarketName: string;
-	setSupermarketName: (name: string) => void;
 }
 
 export const CartStepContext = createContext<CartStepContext>({
 	cartStep: 'start',
 	setCartStep: () => {},
 	nextStep: () => {},
-	supermarketName: '',
-	setSupermarketName: () => {},
 });
 
 export const CartStepProvider = ({
@@ -25,7 +21,6 @@ export const CartStepProvider = ({
 	children: React.ReactNode;
 }) => {
 	const [cartStep, setCartStep] = useState<CreateNewCartStep>('start');
-	const [supermarketName, setSupermarketName] = useState('');
 
 	function nextStep(step: CreateNewCartStep) {
 		setCartStep(step);
@@ -37,8 +32,6 @@ export const CartStepProvider = ({
 				cartStep,
 				setCartStep,
 				nextStep,
-				setSupermarketName,
-				supermarketName,
 			}}
 		>
 			{children}

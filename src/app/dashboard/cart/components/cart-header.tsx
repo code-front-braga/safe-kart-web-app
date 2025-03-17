@@ -1,16 +1,9 @@
-'use client';
-
 import { motion } from 'motion/react';
-import { useContext } from 'react';
 import { CartContext } from '../contexts/cart-context';
+import { useContext } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
-import { Cart } from '@prisma/client';
 
-interface CartHeaderProps {
-	product: Pick<Cart, 'restaurant' | 'amount'>;
-}
-
-export function CartHeader({ product }: CartHeaderProps) {
+export function CartHeader() {
 	const { setIsOpenFormButtonClicked } = useContext(CartContext);
 	return (
 		<motion.div
@@ -18,9 +11,7 @@ export function CartHeader({ product }: CartHeaderProps) {
 			animate={{ opacity: 1, x: 0 }}
 			className="flex w-full items-center justify-between"
 		>
-			<span className="text-christalle font-semibold">
-				{product.restaurant}
-			</span>
+			<span className="text-christalle font-semibold">Atakarejo</span>
 
 			<button
 				type="button"
@@ -33,9 +24,7 @@ export function CartHeader({ product }: CartHeaderProps) {
 
 			<div className="flex flex-col items-end">
 				<p className="text-christalle font-semibold">Total</p>
-				<span className="text-cadetBlue font-semibold">
-					R$ {product.amount}
-				</span>
+				<span className="text-cadetBlue font-semibold">R$ 150,00</span>
 			</div>
 		</motion.div>
 	);

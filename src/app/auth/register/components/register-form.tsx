@@ -332,7 +332,7 @@ export function RegisterForm() {
 													repeatType: 'reverse',
 												}}
 											>
-												<ImSpinner size={24} />
+												<ImSpinner size={24} className="animate-spin" />
 											</motion.div>
 										</>
 									) : (

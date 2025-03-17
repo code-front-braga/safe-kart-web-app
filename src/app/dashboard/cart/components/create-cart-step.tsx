@@ -4,42 +4,41 @@ import { useContext } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { CartContext } from '../contexts/cart-context';
 import { AddItemForm } from './add-item-form';
-import { motion } from 'motion/react';
 import { CartList } from './cart-list';
+import { Prisma } from '@prisma/client';
+import { CartHeader } from './cart-header';
+import { CartStepContext } from '../contexts/cart-step-context';
 
-export function CreateCartStep() {
-	const {
-		isOpenFormButtonClicked,
-		setIsOpenFormButtonClicked,
-		isAddItemFormSubmitted,
-	} = useContext(CartContext);
+interface ProductProps {
+	products: Array<
+		Prisma.ProductGetPayload<{
+			include: {
+				cartProducts: {
+					select: {
+						quantity: true;
+					};
+				};
+			};
+		}>
+	>;
+}
+
+export function CreateCartStep({ products }: ProductProps) {
+	const { isOpenFormButtonClicked, isAddItemFormSubmitted } =
+		useContext(CartContext);
+	const { supermarketName } = useContext(CartStepContext);
 
 	return (
 		<>
-			<motion.div
-				initial={{ opacity: 0, x: 500 }}
-				animate={{ opacity: 1, x: 0 }}
-				className="flex w-full items-center justify-between"
-			>
-				<span className="text-christalle font-semibold">Atakarejo</span>
-
-				<button
-					type="button"
-					onClick={() => setIsOpenFormButtonClicked(true)}
-					className="text-cabaret flex flex-col items-center"
-				>
-					<FaCartPlus size={26} />
-					<p className="text-xs">Add Item</p>
-				</button>
-
-				<div className="flex flex-col items-end">
-					<p className="text-christalle font-semibold">Total</p>
-					<span className="text-cadetBlue font-semibold">R$ 150,00</span>
-				</div>
-			</motion.div>
+			<CartHeader
+				product={{
+					restaurant: supermarketName,
+					amount: products.reduce((acc, product) => acc + product.price, 0),
+				}}
+			/>
 
 			{isOpenFormButtonClicked && <AddItemForm />}
-			{isAddItemFormSubmitted && <CartList />}
+			{isAddItemFormSubmitted && <CartList products={products} />}
 		</>
 	);
 }

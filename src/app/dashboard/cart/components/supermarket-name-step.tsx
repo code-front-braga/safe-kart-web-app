@@ -18,7 +18,7 @@ import { CartStepContext } from '../contexts/cart-step-context';
 import { motion } from 'motion/react';
 
 export function SuperMarketNameStep() {
-	const { nextStep } = useContext(CartStepContext);
+	const { nextStep, setSupermarketName } = useContext(CartStepContext);
 	const form = useForm<SupermarketNameData>({
 		resolver: zodResolver(SupermarketNameSchema),
 		defaultValues: { supermarketName: '' },
@@ -29,7 +29,7 @@ export function SuperMarketNameStep() {
 	});
 
 	function onSubmit(data: SupermarketNameData) {
-		console.log(data);
+		setSupermarketName(data.supermarketName);
 		nextStep('createCart');
 	}
 

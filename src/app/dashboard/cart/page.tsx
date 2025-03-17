@@ -1,10 +1,11 @@
+import { db } from '@/lib/db/prisma';
 import { DashboardSection } from '../components/dashboard-section';
 import { CreateNewCart } from './components/create-new-cart';
 
-export default function DashboardCartPage() {
+export default async function DashboardCartPage() {
 	return (
 		<DashboardSection>
-			<CreateNewCart />
+			<CreateNewCart products={}/>
 		</DashboardSection>
 	);
 }
